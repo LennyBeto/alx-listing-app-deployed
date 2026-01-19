@@ -22,6 +22,7 @@ export interface ButtonProps {
   disabled?: boolean;
 }
 
+// Review interface
 export interface Review {
   name: string;
   avatar: string;
@@ -29,19 +30,23 @@ export interface Review {
   comment: string;
 }
 
+// Address interface
 export interface Address {
-  state: string;
+  state?: string;
   city: string;
   country: string;
 }
 
+// Offers interface
 export interface Offers {
   bed: string;
   shower: string;
   occupants: string;
 }
 
+// Property interface
 export interface PropertyProps {
+  id: string | number;          //  added id
   name: string;
   address: Address;
   rating: number;
@@ -49,8 +54,8 @@ export interface PropertyProps {
   price: number;
   offers: Offers;
   image: string;
-  discount: string;
-  description: string;
-  amenities: string[];
-  reviews: Review[];
+  discount?: number;            // optional number
+  description?: string;
+  amenities?: string[];
+  reviews?: Review[];           // optional
 }
