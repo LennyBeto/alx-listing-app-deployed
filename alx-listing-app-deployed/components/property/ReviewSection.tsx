@@ -1,13 +1,17 @@
 // components/property/ReviewSection.tsx
+"use client";
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { Review } from "@/interfaces";
 
-const ReviewSection: React.FC<{ propertyId: string | number }> = ({
-  propertyId,
-}) => {
+interface ReviewSectionProps {
+  propertyId: string | number;
+}
+
+const ReviewSection: React.FC<ReviewSectionProps> = ({ propertyId }) => {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -16,7 +20,7 @@ const ReviewSection: React.FC<{ propertyId: string | number }> = ({
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          `/api/properties/${propertyId}/reviews`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/properties/${propertyId}/reviews`
         );
         setReviews(response.data);
       } catch (err) {
@@ -40,24 +44,22 @@ const ReviewSection: React.FC<{ propertyId: string | number }> = ({
 
   if (reviews.length === 0) {
     return (
-      <p className="text-gray-500">
-        No reviews yet. Be the first to leave one!
-      </p>
+      <p className="text-gray-500">No reviews yet. Be the first to leave one!</p>
     );
   }
 
   return (
     <div className="mt-8">
-      <h3 className="text-2xl font-semibold">Reviews</h3>
+      <h3 className="text-2xl font-semibold mb-4">Reviews</h3>
       {reviews.map((review, index) => (
         <div key={index} className="border-b pb-4 mb-4">
-          {/* Review User */}
+          {/* Reviewer */}
           <div className="flex items-center">
             <div className="relative w-12 h-12 mr-4">
               <Image
                 src={review.avatar}
                 alt={review.name}
-                layout="fill"
+                fill
                 className="rounded-full object-cover"
               />
             </div>
@@ -67,11 +69,11 @@ const ReviewSection: React.FC<{ propertyId: string | number }> = ({
                 {[...Array(5)].map((_, starIndex) => (
                   <FaStar
                     key={starIndex}
-                    className={`${
+                    className={
                       starIndex < review.rating
                         ? "text-yellow-500"
                         : "text-gray-300"
-                    }`}
+                    }
                   />
                 ))}
               </div>
