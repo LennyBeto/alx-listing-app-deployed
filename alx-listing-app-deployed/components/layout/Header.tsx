@@ -1,6 +1,11 @@
 import { useState } from "react";
 import Image from "next/image";
-import { FiSearch, FiMapPin, FiCalendar, FiUsers } from "react-icons/fi";
+import {
+  FiSearch,
+  FiMapPin,
+  FiCalendar,
+  FiUsers,
+} from "react-icons/fi";
 import {
   FaHome,
   FaBuilding,
