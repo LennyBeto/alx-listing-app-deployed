@@ -9,8 +9,7 @@ const BookingSection: React.FC<{ price: number }> = ({ price }) => {
   const calculateTotal = () => {
     const checkIn = new Date(checkInDate);
     const checkOut = new Date(checkOutDate);
-    const nights =
-      (checkOut.getTime() - checkIn.getTime()) / (1000 * 3600 * 24);
+    const nights = (checkOut.getTime() - checkIn.getTime()) / (1000 * 3600 * 24);
     setTotalPayment(price * nights);
   };
 
