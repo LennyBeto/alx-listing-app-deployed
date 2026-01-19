@@ -29,18 +29,10 @@ const Footer: React.FC = () => {
         <div>
           <h3 className="text-base font-semibold text-white mb-4">Explore</h3>
           <ul className="space-y-2">
-            <li className="hover:text-emerald-400 cursor-pointer">
-              Apartments in Dubai
-            </li>
-            <li className="hover:text-emerald-400 cursor-pointer">
-              Hotels in New York
-            </li>
-            <li className="hover:text-emerald-400 cursor-pointer">
-              Villa in Spain
-            </li>
-            <li className="hover:text-emerald-400 cursor-pointer">
-              Mansion in Indonesia
-            </li>
+            <li className="hover:text-emerald-400 cursor-pointer">Apartments in Dubai</li>
+            <li className="hover:text-emerald-400 cursor-pointer">Hotels in New York</li>
+            <li className="hover:text-emerald-400 cursor-pointer">Villa in Spain</li>
+            <li className="hover:text-emerald-400 cursor-pointer">Mansion in Indonesia</li>
           </ul>
         </div>
 
@@ -61,12 +53,8 @@ const Footer: React.FC = () => {
           <h3 className="text-base font-semibold text-white mb-4">Help</h3>
           <ul className="space-y-2">
             <li className="hover:text-emerald-400 cursor-pointer">Support</li>
-            <li className="hover:text-emerald-400 cursor-pointer">
-              Cancel booking
-            </li>
-            <li className="hover:text-emerald-400 cursor-pointer">
-              Refunds Process
-            </li>
+            <li className="hover:text-emerald-400 cursor-pointer">Cancel booking</li>
+            <li className="hover:text-emerald-400 cursor-pointer">Refunds Process</li>
           </ul>
         </div>
       </div>
@@ -77,22 +65,13 @@ const Footer: React.FC = () => {
       {/* Bottom Disclaimer & Links */}
       <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-400">
         <p className="text-center md:text-left">
-          Some hotel requires you to cancel more than 24 hours before check-in.
-          Details{" "}
-          <span className="text-emerald-400 hover:underline cursor-pointer">
-            here
-          </span>
+          Some hotel requires you to cancel more than 24 hours before check-in. Details{" "}
+          <span className="text-emerald-400 hover:underline cursor-pointer">here</span>
         </p>
         <div className="flex flex-wrap justify-center md:justify-end gap-4">
-          <span className="hover:text-white cursor-pointer">
-            Terms of Service
-          </span>
-          <span className="hover:text-white cursor-pointer">
-            Policy service
-          </span>
-          <span className="hover:text-white cursor-pointer">
-            Cookies Policy
-          </span>
+          <span className="hover:text-white cursor-pointer">Terms of Service</span>
+          <span className="hover:text-white cursor-pointer">Policy service</span>
+          <span className="hover:text-white cursor-pointer">Cookies Policy</span>
           <span className="hover:text-white cursor-pointer">Partners</span>
         </div>
       </div>
