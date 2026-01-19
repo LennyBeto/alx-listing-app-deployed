@@ -1,11 +1,11 @@
-import React from "react";
-import Pill from "./Pill";
-import ActionButtons from "./ActionButtons";
+import React from 'react'
+import Pill from './Pill'
+import ActionButtons from './ActionButtons'
 
 interface FilterSectionProps {
-  filters: string[];
-  activeFilter: string;
-  onSelect: (filter: string) => void;
+  filters: string[]
+  activeFilter: string
+  onSelect: (filter: string) => void
 }
 
 const FilterSection: React.FC<FilterSectionProps> = ({
@@ -32,7 +32,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
         <ActionButtons />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FilterSection;
+export default FilterSection
