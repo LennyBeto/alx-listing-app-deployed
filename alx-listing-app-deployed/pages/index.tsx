@@ -25,27 +25,27 @@ const Home: React.FC = () => {
 
   // 🥄 Fetch properties from API when page loads
   useEffect(() => {
-  const fetchProperties = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/properties`
-      );
-      setProperties(response.data);
-    } catch (err) {
-      console.error("Error fetching properties:", err);
-      setError("Oops! Could not load properties.");
-    } finally {
-      setLoading(false);
-    }
-  };
+    const fetchProperties = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/properties`,
+        );
+        setProperties(response.data);
+      } catch (err) {
+        console.error("Error fetching properties:", err);
+        setError("Oops! Could not load properties.");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  fetchProperties();
-}, []);
+    fetchProperties();
+  }, []);
 
   // 🧹 Filter listings dynamically
   const filteredListings = properties.filter((property) =>
-    activeFilter === "All" ? true : property.category.includes(activeFilter)
+    activeFilter === "All" ? true : property.category.includes(activeFilter),
   );
 
   return (
